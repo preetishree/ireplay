@@ -386,10 +386,12 @@ $(window).load(function(){
             }
            
            //alert(lis);
+            if(contacts[i].displayName != null)
+            {
 		var listsample=lis.replace('**displaname**', contacts[i].displayName);
 		var listsample=lis.replace('**contactno**', ph);
             listno=listno+listsample;
-
+            }
            
         }
          document.getElementById('list').innerHTML=listno;
