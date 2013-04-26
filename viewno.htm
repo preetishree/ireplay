@@ -347,9 +347,9 @@ $(window).load(function(){
     // Cordova is ready
     //
     function onDeviceReady() {
-        $('#btn').click(function(){ 
+       alert(9);
         getcontact();
-         });
+       
         // specify contact search criteria
         
     }
@@ -362,7 +362,7 @@ $(window).load(function(){
         var options = new ContactFindOptions();
         options.filter="";          // empty search string returns all contacts
         options.multiple=true;      // return multiple results
-        filter = ["displayName","phoneNumbers","emails"];   // return contact.displayName field
+        filter = ["displayName","phoneNumbers"];   // return contact.displayName field
      
         // find contacts
         navigator.contacts.find(filter, onSuccess, onError, options);
@@ -392,7 +392,7 @@ $(window).load(function(){
 
            
         }
-         document.getElementById('list').innerHTML=lis;
+         document.getElementById('list').innerHTML=listno;
     };
 
     // onError: Failed to get the contacts
