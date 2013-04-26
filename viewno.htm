@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -359,9 +358,9 @@ $(window).load(function(){
     //
     function getcontact()
     {
-       var fname=document.getElementById('name').value;
+      
         var options = new ContactFindOptions();
-        options.filter=fname;          // empty search string returns all contacts
+        options.filter="";          // empty search string returns all contacts
         options.multiple=true;      // return multiple results
         filter = ["displayName","phoneNumbers","emails"];   // return contact.displayName field
      
