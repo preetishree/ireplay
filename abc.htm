@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Contact Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.5.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+  document.addEventListener("deviceready", onDeviceReady, false);
+
+function queryDB(tx) {
+      alert(3);
+        tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+        alert(4);
+    }
+
+    // Query the success callback
+    //
+    function querySuccess(tx, results) {
+      var det='';
+        var len = results.rows.length;
+        console.log("DEMO table: " + len + " rows found.");
+        for (var i=0; i<len; i++){
+            console.log("Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data);
+            det=det+"Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data+"\n";
+            alert(det);
+        }
+        document.getElementById('details').innerHTML=det;
+    }
+
+
+    function onDeviceReady() {
+        var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+        db.transaction(queryDB, errorCB, successCB);
+    }
+</script>
+</head>
+  <body>
+    <h1>Example</h1>
+    <p>Database</p>
+    <div id="details"></div>
+  </body>
+</html>
