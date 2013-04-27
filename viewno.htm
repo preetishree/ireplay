@@ -348,7 +348,7 @@ $(window).load(function(){
     function onDeviceReady() {
        //alert(9);
         getcontact();
-       
+       //createdatabase();
         // specify contact search criteria
         
     }
@@ -409,10 +409,37 @@ $(window).load(function(){
     function onError(contactError) {
         alert('onError!');
     }
+    
+    
+     function createdatabase() {
+        var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+        db.transaction(populateDB, errorCB, successCB);
+    }
+    
+    
+    function populateDB(tx) {
+        
+        tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (contactno unique, message)');
+        //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+        //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+    }
 
     </script>
     
-</script>
+    <script>
+    $(function(){
+    	$('.button_example').click(function(){
+    $('.checkno').each(function () {
+    	var msg=$("#messageval").val();
+    
+   alert($(this).val());
+   alert(msg);
+    	
+    });
+    	
+    	});
+    });
+    </script>
 
 </head>
 
@@ -430,17 +457,17 @@ iReply<br />
 	<div id="scroller">
 		<div style="width:100%;height:auto;float:left;">
 			<div style="width:94%;height:auto;float:left;">
-				<input type="text" style="width:100%;height:100px; float:left; margin-left:2%;" />
+				<input type="text" style="width:100%;height:100px; float:left; margin-left:2%;" id="messageval" />
 			</div>
 			<div style="width:100%;height:auto;float:left; margin-top:5%;">
-				<input type="button" class="button_example" value="Update" style="width:40%; float:right; margin-right:2%;" />
+				<input type="button" class="button_example" id="button_example" value="Update" style="width:40%; float:right; margin-right:2%;" />
 			
 			</div>
 			
 			<div id="samplelist" style="display:none;">
 							<div class="rowbar">
 								<div style="width:60%;height:auto;float:left; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#0099FF; padding:1.5%;">
-										<input type="checkbox"  style="float:left; margin-right:1%;" value="**checkidval**" />**displaname**<br />
+										<input type="checkbox"  style="float:left; margin-right:1%;" value="**checkidval**" class="checkno" />**displaname**<br />
 										
 									
 								</div>
