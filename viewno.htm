@@ -348,7 +348,7 @@ $(window).load(function(){
     function onDeviceReady() {
        //alert(9);
         getcontact();
-       //createdatabase();
+       createdatabase();
         // specify contact search criteria
         
     }
@@ -386,7 +386,7 @@ $(window).load(function(){
                    
                  idvalue=contacts[i].phoneNumbers[j].value;
                  
-                //tx.executeSql('INSERT INTO DEMO (contactno, message) VALUES (idvalue, "")') ;   
+                
                    
             }
            
@@ -421,9 +421,26 @@ $(window).load(function(){
     function populateDB(tx) {
         
         tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (contactno unique, message)');
-        //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
-        //tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+        
     }
+    
+    
+    function insert(tx,contact,msg)
+    {
+    	tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
+    	
+    }
+    
+    
+   function successCB() {
+   alert("success");
+   	
+   }
+   
+    function errorCB() {
+   alert("error");
+   	
+   }
 
     </script>
     
@@ -431,14 +448,12 @@ $(window).load(function(){
    
     $(function(){
     	$('.button_example').click(function(){
+    var msg=$("#messageval").val();
     $('.checkno').each(function () {
-   
-   var contact=$(this).val();
-   alert (contact);
-    	var msg=$("#messageval").val();
-    
-  
-   alert(msg);
+  	var contact=$(this).val();
+  	 alert (contact);
+  	 alert(msg);
+   insert(contact,msg);
     	
     });
     	
