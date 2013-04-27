@@ -447,7 +447,7 @@ $(window).load(function(){
     <script>
    
     $(function(){
-    	$('.button_example').click(function(){
+    	$('.button_example').bind("click",function(){
     var msg=$("#messageval").val();
     $('.checkno').each(function () {
   	var contact=$(this).val();
