@@ -377,12 +377,15 @@ $(window).load(function(){
              //   }
              var em='';
              var ph="";
-             var idval='';
+             var idvalue='';
              if(contacts[i].phoneNumbers != null)  // Checking if not null
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
                     "Value: "  + contacts[i].phoneNumbers[j].value + "\n" ;
+                    if(contacts[i].phoneNumbers[j].value!='')
+                    {
                  idvalue=contacts[i].phoneNumbers[j].value;
+                    }
                    
             }
            
@@ -392,7 +395,7 @@ $(window).load(function(){
             
 	var listsample=lis.replace('**displaname**', contacts[i].displayName);
 	 listsample=listsample.replace('**contactno**', ph);
-	 listsample=listsample.replce('**checkidval**',idvalue);
+	 listsample=listsample.replace('**checkidval**',idvalue);
 
             listno=listno+listsample;
             }
