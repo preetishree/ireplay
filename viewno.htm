@@ -391,7 +391,7 @@ $(window).load(function(){
             }
            
            //alert(lis);
-            if(contacts[i].displayName != null || idvalue!='')
+            if(contacts[i].displayName != null || idvalue!='' || idvalue!=null)
             {
             
 	var listsample=lis.replace('**displaname**', contacts[i].displayName);
@@ -447,13 +447,16 @@ $(window).load(function(){
     <script>
    
     $(function(){
-    	$('.button_example').bind("click",function(){
+    	$('.button_example').click(function(){
     var msg=$("#messageval").val();
-    $('.checkno').each(function () {
-  	var contact=$(this).val();
+    $('input:checkbox[name=checkno]:checked').each(function () {
+    	if($(this).is(':checked'))
+    
+    		var contact=$(this).val();	
+    	
   	 alert (contact);
   	 alert(msg);
-  // insert(contact,msg);
+ 	insert(contact,msg);
     	
     });
     
