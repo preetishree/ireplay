@@ -314,7 +314,7 @@ $(window).load(function(){
     
     
     function populateDB(tx) {
-        tx.executeSql('DROP TABLE IF EXISTS DEMO');
+        //tx.executeSql('DROP TABLE IF EXISTS DEMO');
         tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (contactno unique, message)');
         
     }
