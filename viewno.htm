@@ -233,10 +233,13 @@ $(window).load(function(){
 
     // Cordova is ready
     //
+     var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
     function onDeviceReady() {
        //alert(9);
+       
         getcontact();
-       createdatabase();
+        db.transaction(populateDB, errorCB, successCB);
+       //createdatabase();
         // specify contact search criteria
         
     }
@@ -303,10 +306,10 @@ $(window).load(function(){
     }
     
     
-     function createdatabase() {
-        var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
-        db.transaction(populateDB, errorCB, successCB);
-    }
+     //function createdatabase() {
+    //    var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+    //    db.transaction(populateDB, errorCB, successCB);
+   // }
     
     
     function populateDB(tx) {
@@ -343,11 +346,14 @@ $(window).load(function(){
     	
   	 alert (contact);
   	 alert(msg);
- 	 function insert(tx)
-    {
-    	tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
+  db.transaction(function(tx) {
+      tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
+        });
+      //  function insert(tx)
+   // {
+    //	tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
     	
-    }
+   // }
     	
     });
     
