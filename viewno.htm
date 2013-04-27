@@ -428,21 +428,19 @@ $(window).load(function(){
     </script>
     
     <script>
-    var emptyval='';
+   
     $(function(){
     	$('.button_example').click(function(){
-    $('input:checkbox[name=checkno]:checked').each(function () {
-    if($(this).is(':checked'))	
-    emptyval=emptyval+$(this).val()+',';	
-    	
-    	
-    });
+    $('.checkno').each(function () {
+   
+   var contact=$(this).val();
+   alert (contact);
     	var msg=$("#messageval").val();
     
-   alert(emptyval);
+  
    alert(msg);
     	
-    
+    });
     	
     	});
     });
