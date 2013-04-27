@@ -346,7 +346,7 @@ $(window).load(function(){
     // Cordova is ready
     //
     function onDeviceReady() {
-       alert(9);
+       //alert(9);
         getcontact();
        
         // specify contact search criteria
@@ -382,16 +382,18 @@ $(window).load(function(){
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
                     "Value: "  + contacts[i].phoneNumbers[j].value + "\n" ;
-                 idval=contacts[i].phoneNumbers[j].value;
+                 idvalue=contacts[i].phoneNumbers[j].value;
                    
             }
            
            //alert(lis);
             if(contacts[i].displayName != null)
             {
-		var listsample=lis.replace('**displaname**', contacts[i].displayName);
+            
+	var listsample=lis.replace('**displaname**', contacts[i].displayName);
 	 listsample=listsample.replace('**contactno**', ph);
-	 //listsample=listsample.replce('**checkidval**',idval);
+	 listsample=listsample.replce('**checkidval**',idvalue);
+
             listno=listno+listsample;
             }
            
