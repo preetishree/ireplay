@@ -265,7 +265,7 @@ $(window).load(function(){
              //   }
              var em='';
              var ph="";
-             var idvalue='';
+             var idvalue='0';
              if(contacts[i].phoneNumbers != null)  // Checking if not null
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
@@ -275,7 +275,7 @@ $(window).load(function(){
                    	idvalue=contacts[i].phoneNumbers[j].value;
                    }
                 
-                
+                alert(idvalue);
                    
             }
            
