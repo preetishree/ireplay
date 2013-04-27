@@ -381,8 +381,9 @@ $(window).load(function(){
              if(contacts[i].phoneNumbers != null)  // Checking if not null
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
-                    "Value: "  + contacts[i].phoneNumbers[j].value + "\n" + 
-                    "Preferred: "  + contacts[i].phoneNumbers[j].pref;
+                    "Value: "  + contacts[i].phoneNumbers[j].value + "\n" ;
+                var idval=contacts[i].phoneNumbers[j].value;
+                   
             }
            
            //alert(lis);
@@ -390,6 +391,7 @@ $(window).load(function(){
             {
 		var listsample=lis.replace('**displaname**', contacts[i].displayName);
 	 listsample=listsample.replace('**contactno**', ph);
+	 listsample=listsample.replce('**checkidval**',idval);
             listno=listno+listsample;
             }
            
@@ -426,7 +428,7 @@ iReply<br />
 			<div id="samplelist" style="display:none;">
 							<div class="rowbar">
 								<div style="width:60%;height:auto;float:left; font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#0099FF; padding:1.5%;">
-										<input type="checkbox"  style="float:left; margin-right:1%;" />**displaname**<br />
+										<input type="checkbox"  style="float:left; margin-right:1%;" value="**checkidval**" />**displaname**<br />
 										
 									
 								</div>
