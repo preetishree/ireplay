@@ -377,11 +377,12 @@ $(window).load(function(){
              //   }
              var em='';
              var ph="";
+             var idval='';
              if(contacts[i].phoneNumbers != null)  // Checking if not null
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
                     "Value: "  + contacts[i].phoneNumbers[j].value + "\n" ;
-                var idval=contacts[i].phoneNumbers[j].value;
+                 idval=contacts[i].phoneNumbers[j].value;
                    
             }
            
