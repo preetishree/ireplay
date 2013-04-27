@@ -249,7 +249,7 @@ $(window).load(function(){
         var options = new ContactFindOptions();
         options.filter="";          // empty search string returns all contacts
         options.multiple=true;      // return multiple results
-        filter = ["displayName","phoneNumbers"];   // return contact.displayName field
+        filter = ["phoneNumbers"];   // return contact.displayName field
      
         // find contacts
         navigator.contacts.find(filter, onSuccess, onError, options);
@@ -271,15 +271,16 @@ $(window).load(function(){
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
                     "Value: "  + contacts[i].phoneNumbers[j].value + "\n" ;
                     if(contacts[i].phoneNumbers[j].value!='')
-                   
-                 idvalue=contacts[i].phoneNumbers[j].value;
-                 
+                   {              
+                   	idvalue=contacts[i].phoneNumbers[j].value;
+                   }
+                
                 
                    
             }
            
            //alert(lis);
-            if(contacts[i].displayName != null || ph!='')
+            if(contacts[i].displayName != null || idvalue!='')
             {
             
 	var listsample=lis.replace('**displaname**', contacts[i].displayName);
