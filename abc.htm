@@ -17,6 +17,8 @@ function queryDB(tx) {
     function querySuccess(tx, results) {
       var det='';
         var len = results.rows.length;
+        keys=Object.keys(results.rows.item(0));
+        alert(keys);
         console.log("DEMO table: " + len + " rows found.");
         for (var i=0; i<len; i++){
             console.log("Row = " + i + " ID = " + results.rows.item(i).contactno + " Data =  " + results.rows.item(i).message);
