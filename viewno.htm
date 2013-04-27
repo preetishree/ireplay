@@ -337,7 +337,9 @@ $(window).load(function(){
     <script>
    
     $(function(){
+    	
     	$('#button1').click(function(){
+    		 var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
     var msg=$("#messageval").val();
     $('input:checkbox[name=checkno]:checked').each(function () {
     	if($(this).is(':checked'))
@@ -348,6 +350,7 @@ $(window).load(function(){
   	 alert(msg);
   db.transaction(function(tx) {
       tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
+      alert(12);
         });
       //  function insert(tx)
    // {
