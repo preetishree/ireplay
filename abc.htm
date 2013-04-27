@@ -19,17 +19,20 @@ function queryDB(tx) {
         var len = results.rows.length;
         console.log("DEMO table: " + len + " rows found.");
         for (var i=0; i<len; i++){
-            console.log("Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data);
-            det=det+"Row = " + i + " ID = " + results.rows.item(i).id + " Data =  " + results.rows.item(i).data+"\n";
+            console.log("Row = " + i + " ID = " + results.rows.item(i).contactno + " Data =  " + results.rows.item(i).message);
+            det=det+"Row = " + i + " ID = " + results.rows.item(i).contactno + " Data =  " + results.rows.item(i).message+"\n";
             alert(det);
         }
         document.getElementById('details').innerHTML=det;
     }
-
+function errorCB(err) {
+        console.log("Error processing SQL: "+err.code);
+        alert("Error processing SQL: "+err.code);
+    }
 
     function onDeviceReady() {
         var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
-        db.transaction(queryDB, errorCB, successCB);
+        db.transaction(queryDB, errorCB, querySuccess);
     }
 </script>
 </head>
