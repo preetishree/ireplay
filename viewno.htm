@@ -270,17 +270,17 @@ $(window).load(function(){
             for (var j=0; j<contacts[i].phoneNumbers.length; j++) {
                 var ph="Type: " + contacts[i].phoneNumbers[j].type + "\n" + 
                     "Value: "  + contacts[i].phoneNumbers[j].value + "\n" ;
-                    if(contacts[i].phoneNumbers[j].value!='')
+                    if(contacts[i].phoneNumbers[j].value!=''||contacts[i].phoneNumbers[j].value!= null)
                    {              
                    	idvalue=contacts[i].phoneNumbers[j].value;
                    }
                 
-                alert(idvalue);
+               
                    
             }
            
            //alert(lis);
-            if(contacts[i].displayName != null || idvalue!='')
+            if(contacts[i].displayName != null || idvalue!='0')
             {
             
 	var listsample=lis.replace('**displaname**', contacts[i].displayName);
