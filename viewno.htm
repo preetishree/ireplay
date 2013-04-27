@@ -428,15 +428,21 @@ $(window).load(function(){
     </script>
     
     <script>
+    var emptyval='';
     $(function(){
     	$('.button_example').click(function(){
-    $('.checkno').each(function () {
-    	var msg=$("#messageval").val();
-    
-   alert($(this).val());
-   alert(msg);
+    $('input:checkbox[name=checkno]:checked').each(function () {
+    if($(this).is(':checked'))	
+    emptyval=emptyval+$(this).val()+',';	
+    	
     	
     });
+    	var msg=$("#messageval").val();
+    
+   alert(emptyval);
+   alert(msg);
+    	
+    
     	
     	});
     });
