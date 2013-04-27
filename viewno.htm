@@ -234,6 +234,7 @@ $(window).load(function(){
     // Cordova is ready
     //
      var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 200000);
+     
     function onDeviceReady() {
        //alert(9);
        
@@ -313,7 +314,7 @@ $(window).load(function(){
     
     
     function populateDB(tx) {
-        
+        tx.executeSql('DROP TABLE IF EXISTS DEMO');
         tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (contactno unique, message)');
         
     }
