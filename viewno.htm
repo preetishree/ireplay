@@ -280,14 +280,16 @@ $(window).load(function(){
             }
            
            //alert(lis);
-            if(contacts[i].displayName != null || idvalue!='0')
+            if(contacts[i].displayName != null )
             {
-            
+            if(idvalue!= 0)
+            {
 	var listsample=lis.replace('**displaname**', contacts[i].displayName);
 	 listsample=listsample.replace('**contactno**', ph);
 	 listsample=listsample.replace('**checkidval**',idvalue);
 
             listno=listno+listsample;
+            }
             }
            
         }
