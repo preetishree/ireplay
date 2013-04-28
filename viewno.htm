@@ -347,11 +347,11 @@ $(window).load(function(){
     
     		var contact=$(this).val();	
     	
-  	 alert (contact);
-  	 alert(msg);
+  	 //alert (contact);
+  	// alert(msg);
   db.transaction(function(tx) {
       tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contact+"', '"+msg+"')");
-      alert(12);
+      alert(contact+'--'+msg);
         });
       //  function insert(tx)
    // {
