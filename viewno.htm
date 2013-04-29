@@ -344,15 +344,16 @@ $(window).load(function(){
     var msg=$("#messageval").val();
     $('input:checkbox[name=checkno]:checked').each(function () {
     	if($(this).is(':checked'))
+    	{
+    	var contact=$(this).val();	
     
-    		var contact=$(this).val();	
-    	
-  	 //alert (contact);
   	// alert(msg);
   db.transaction(function(tx) {
+  		alert (contact);
       tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contact+"', '"+msg+"')");
       alert(contact+'--'+msg);
         });
+    	}
       //  function insert(tx)
    // {
     //	tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
