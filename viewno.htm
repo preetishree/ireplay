@@ -338,6 +338,7 @@ $(window).load(function(){
     <script>
    
     $(function(){
+    	var contno=new array();
     	
     	$('#button1').click(function(){
     		 var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 2000000);
@@ -347,15 +348,10 @@ $(window).load(function(){
     	if($(this).is(':checked'))
     	{
     		i++;
-    	var contact=$(this).val();	
-    
+    	contno[]=$(this).val();	
+    	
   	// alert(msg);
-  db.transaction(function(tx) {
-  	  alert(i);
-  		//alert (contact);
-      tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contact+"', '"+msg+"')");
-      //alert(contact+'--'+msg);
-        });
+ 
     	}
       //  function insert(tx)
    // {
@@ -364,6 +360,18 @@ $(window).load(function(){
    // }
   	
     });
+    
+     db.transaction(function(tx) {
+  var contlen=contno.length;
+  for(i=0;i<=contlen;i++)
+  {
+  	alert (contno[i]);
+      tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contno[i]+"', '"+msg+"')");
+  }
+      //alert(contact+'--'+msg);
+        });
+    
+    
     
     window.location.href="abc.htm";
     	
