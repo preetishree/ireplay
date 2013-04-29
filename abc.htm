@@ -373,8 +373,7 @@ function queryDB(tx) {
 	  var lis=document.getElementById('messagelist').innerHTML;
 	  var msg='';
 	  var ph='';
-	  var listno='';
-        var len = results.rows.length;
+	  var len = results.rows.length;
         keys=Object.keys(results.rows.item(0));
         alert(keys);
         console.log("DEMO table: " + len + " rows found.");
@@ -385,14 +384,15 @@ function queryDB(tx) {
             //det=det+"Row = " + i + " ID = " + results.rows.item(i).contactno + " Data = " + results.rows.item(i).message+"\n";
             alert(msg);
 			alert(ph);
-        }
-		
-		var listsample=lis.replace('**message**', msg);
+	var listsample=lis.replace('**message**', msg);
 	 listsample=listsample.replace('**contact no**', ph);
 	 
-	 listno=listno+listsample;
+	
 	 
-	 $('#rowbar1').append(listno);
+	 $('#rowbar1').append(listsample);
+        }
+		
+	
 	 
   
     }
