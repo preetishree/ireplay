@@ -341,14 +341,16 @@ $(window).load(function(){
     	var contno=new array();
     	
     	$('#button1').click(function(){
+    		
+    		alert("clicked");
     		 var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 2000000);
     var msg=$("#messageval").val();
-    var i=0;
+   
     $('input:checkbox[name=checkno]:checked').each(function () {
     	if($(this).is(':checked'))
     	{
-    		i++;
-    	contno[]=$(this).val();	
+    	
+    	contno.push=$(this).val();	
     	
   	// alert(msg);
  
