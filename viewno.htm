@@ -324,7 +324,7 @@ $(window).load(function(){
     
     
    function successCB() {
-   alert("success");
+   //alert("success");
    	
    }
    
@@ -351,6 +351,7 @@ $(window).load(function(){
     
   	// alert(msg);
   db.transaction(function(tx) {
+  	  alert(i);
   		//alert (contact);
       tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contact+"', '"+msg+"')");
       //alert(contact+'--'+msg);
@@ -361,7 +362,7 @@ $(window).load(function(){
     //	tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
     	
    // }
-    alert(i);	
+  	
     });
     
     window.location.href="abc.htm";
