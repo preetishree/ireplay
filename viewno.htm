@@ -344,7 +344,7 @@ $(window).load(function(){
     	$('#button1').click(function(){
     		
     		alert("clicked");
-    		 var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 2000000);
+
     var msg=$("#messageval").val();
    
     $('input:checkbox[name=checkno]:checked').each(function () {
@@ -363,7 +363,7 @@ $(window).load(function(){
    // }
   	
     });
-    
+    		 var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 2000000);    
      db.transaction(function(tx) {
   var contlen=contno.length;
   for(i=0;i<contlen;i++)
