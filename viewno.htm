@@ -342,16 +342,18 @@ $(window).load(function(){
     	$('#button1').click(function(){
     		 var db = window.openDatabase("Database", "1.0", "PhoneGap Demo", 2000000);
     var msg=$("#messageval").val();
+    var i=0;
     $('input:checkbox[name=checkno]:checked').each(function () {
     	if($(this).is(':checked'))
     	{
+    		i++;
     	var contact=$(this).val();	
     
   	// alert(msg);
   db.transaction(function(tx) {
-  		alert (contact);
+  		//alert (contact);
       tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contact+"', '"+msg+"')");
-      alert(contact+'--'+msg);
+      //alert(contact+'--'+msg);
         });
     	}
       //  function insert(tx)
@@ -359,7 +361,7 @@ $(window).load(function(){
     //	tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('contact', 'msg')");
     	
    // }
-    	
+    alert(i);	
     });
     
     window.location.href="abc.htm";
