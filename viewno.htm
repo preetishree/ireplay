@@ -366,7 +366,7 @@ $(window).load(function(){
     
      db.transaction(function(tx) {
   var contlen=contno.length;
-  for(i=0;i<=contlen;i++)
+  for(i=0;i<contlen;i++)
   {
   	alert (contno[i]);
       tx.executeSql("INSERT INTO DEMO (contactno, message) VALUES ('"+contno[i]+"', '"+msg+"')");
